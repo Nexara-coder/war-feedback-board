@@ -1,0 +1,15 @@
+[Unit]
+Description=W.A.R. Online Feedback Board
+After=network.target
+
+[Service]
+Type=simple
+User=warboard
+WorkingDirectory=/opt/war-feedback-board
+ExecStart=/usr/bin/node /opt/war-feedback-board/server.js
+Restart=on-failure
+RestartSec=5
+EnvironmentFile=/opt/war-feedback-board/.env
+
+[Install]
+WantedBy=multi-user.target
